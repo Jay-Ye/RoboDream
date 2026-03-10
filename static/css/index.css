@@ -1,0 +1,474 @@
+/* ============================================
+   RoboDream — Dark Theme
+   ============================================ */
+
+/* --- Global --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #0a0a0a;
+  color: #d4d4d4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(100, 160, 255, 0.3);
+  color: #ffffff;
+}
+
+/* --- Typography --- */
+.title, .subtitle, h1, h2, h3, h4, h5, h6 {
+  color: #f0f0f0 !important;
+}
+
+.content, .content p {
+  color: #b8b8b8;
+  line-height: 1.75;
+}
+
+.content li {
+  color: #b8b8b8;
+}
+
+strong, b {
+  color: #e8e8e8;
+}
+
+/* --- RoboDream title --- */
+.robodream-title {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(90deg, rgb(227, 69, 150) 0%, rgb(90, 80, 234) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.publication-subtitle {
+  font-size: 0.65em;
+  font-weight: 700;
+  color: #f0f0f0 !important;
+  letter-spacing: -0.01em;
+}
+
+/* --- Sections & layout --- */
+.section, .hero, .footer {
+  background-color: transparent;
+}
+
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.hero.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.navbar-item {
+  color: #ccc !important;
+}
+
+.navbar-item:hover {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+/* --- Authors --- */
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+  color: #b0b0b0;
+}
+
+.publication-authors a {
+  color: #7eb8f0 !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-authors a:hover {
+  color: #aad4ff !important;
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+/* --- Buttons --- */
+.button.is-dark {
+  background-color: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  color: #d4d4d4;
+  transition: all 0.25s ease;
+}
+
+.button.is-dark:hover {
+  background-color: #2a2a2a;
+  border-color: #555;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+/* --- Divider between sections --- */
+.section + .section {
+  border-top: 1px solid #1a1a1a;
+}
+
+/* --- Videos --- */
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 0 !important;
+  border: none;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+#teaser {
+  border-radius: 0;
+  border: none;
+  display: block;
+}
+
+/* Video wrapper overrides for task content */
+.task-content .publication-video {
+  height: auto !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+.task-content video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.task-content .publication-video,
+.task-content video {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* --- Tabs --- */
+.tabs.is-toggle a {
+  color: #888;
+  border-color: #333;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.tabs.is-toggle a:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.tabs.is-toggle li.is-active a {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* --- Tables --- */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  color: #d4d4d4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: center;
+  border-bottom: 1px solid #222;
+  white-space: nowrap;
+}
+
+.results-table thead th {
+  background-color: #161616;
+  color: #e0e0e0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #333;
+}
+
+.results-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.results-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.results-table tbody tr:last-child {
+  font-weight: 700;
+  border-top: 2px solid #444;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.results-table .best {
+  font-weight: 700;
+  color: #5ecc73;
+}
+
+.dual-table-left .best,
+.dual-table-right .best {
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+/* --- Dual table layout --- */
+.dual-table-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dual-table-left {
+  flex: 1 1 50%;
+  min-width: 0;
+  font-size: 0.82rem;
+}
+
+.dual-table-right {
+  flex: 1 1 50%;
+  min-width: 0;
+  font-size: 0.82rem;
+}
+
+.dual-table-left th,
+.dual-table-left td,
+.dual-table-right th,
+.dual-table-right td {
+  padding: 0.5rem 0.5rem !important;
+  font-size: 0.82rem !important;
+  text-align: center !important;
+}
+
+.dual-table-left td:first-child,
+.dual-table-left th:first-child {
+  text-align: left !important;
+}
+
+@media screen and (max-width: 768px) {
+  .dual-table-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* --- Feature cards --- */
+.feature-card {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 1.8rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  border-color: #3a3a3a;
+}
+
+.feature-card .icon-large {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.feature-card .title {
+  margin-bottom: 0.5rem !important;
+}
+
+.feature-card p {
+  color: #999;
+  line-height: 1.6;
+}
+
+/* --- Images --- */
+.section .column img {
+  border-radius: 0;
+  border: none;
+}
+
+/* --- Rollout video grid --- */
+.rollout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.rollout-grid video {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+.rollout-item {
+  text-align: center;
+}
+
+.rollout-item p {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 500;
+}
+
+/* --- Carousel --- */
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+/* --- Blend: make black backgrounds transparent on dark page --- */
+video {
+  mix-blend-mode: screen;
+  background: transparent !important;
+}
+
+img:not(.no-blend) {
+  mix-blend-mode: screen;
+  background: transparent !important;
+}
+
+/* --- Custom bullet points --- */
+.content ul {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+
+.content ul li::marker {
+  color: #666;
+}
+
+/* --- BibTeX --- */
+pre {
+  background-color: #141414 !important;
+  color: #b0b0b0 !important;
+  border: 1px solid #222;
+  border-radius: 10px !important;
+  padding: 1.2rem !important;
+  font-size: 0.88rem;
+}
+
+code {
+  color: #b0b0b0 !important;
+  background-color: transparent !important;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #050505 !important;
+  border-top: 1px solid #1a1a1a;
+  padding: 2rem 1.5rem !important;
+}
+
+.footer .content p {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: #7eb8f0;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #e0e0e0;
+}
+
+/* --- Subtitle for teaser --- */
+.subtitle {
+  color: #999 !important;
+}
+
+/* --- Smooth scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .rollout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-title {
+    font-size: 1.5rem !important;
+  }
+}

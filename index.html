@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="RoboDream: Controllable and Scalable Robot Data Synthesis via Embodiment-Aware World Models.">
+  <meta name="keywords" content="RoboDream, Robot Learning, Video Diffusion, Imitation Learning, World Models, Embodied AI, Data Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboDream</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/robodream_favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://jay-ye.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Title and Authors -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="static/images/robodream_logo.svg" alt="RoboDream Logo" style="height: 1.8em; vertical-align: -0.35em;">
+            <span class="robodream-title">RoboDream</span><br>
+            <span class="publication-subtitle">Controllable and Scalable Robot Data Synthesis<br>via Embodiment-Aware World Models</span>
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jay-ye.github.io/">Junjie Ye</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://rongxuezoe.github.io/">Rong Xue</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://basile.be/">Basile Van Hoorick</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/runhao-li-lee021004/">Runhao Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://harshithabr.github.io/">Harshitha Belagavi Rajaprakash</a><sup>1</sup>,</span>
+            <br>
+            <span class="author-block">
+              <a href="https://pvtokmakov.github.io/home/">Pavel Tokmakov</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://zubairirshad.com/">Muhammad Zubair Irshad</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://vitorguizilini.github.io/">Vitor Guizilini</a><sup>2&dagger;</sup>,</span>
+            <span class="author-block">
+              <a href="https://yuewang.xyz/">Yue Wang</a><sup>1&dagger;</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>USC Physical Superintelligence (PSI) Lab</span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Toyota Research Institute</span>
+          </div>
+          <div class="is-size-6 publication-authors" style="margin-top: 0.3rem;">
+            <span class="author-block"><sup>&dagger;</sup>Equal advising</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming Soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Coming Soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Video -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <span class="dnerf">RoboDream</span> generates robot demonstrations with <span style="color: rgb(227, 69, 150); font-weight: 700;">novel objects</span>,
+        in <span style="color: rgb(64, 161, 184); font-weight: 700;">novel scenes</span>, from <span style="color: rgb(52, 206, 156); font-weight: 700;">novel views</span> via compositional synthesis.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Scaling robot learning requires large-scale, diverse demonstrations, yet real-world data collection via teleoperation remains prohibitively expensive and time-consuming. While video diffusion models offer a promising avenue for data scaling, existing generative approaches are often limited to superficial visual augmentation, or suffer from embodiment hallucinations that yield physically infeasible motions.
+            We present <strong>RoboDream</strong>, a generalizable embodiment-centric world model that achieves scalable data generation by synthesizing photorealistic demonstrations with novel objects, in novel scenes, and from novel viewpoints.
+            Our approach anchors generation to rendered robot motion while conditioning on explicit scene and object priors, effectively decoupling trajectory execution from environment synthesis.
+          </p>
+          <p>
+            This formulation unlocks two powerful data scaling capabilities:
+            (1) <strong>retrieval and rebirth</strong>, which repurposes existing trajectories into entirely new contexts without new motion data; and
+            (2) <strong>prop-free teleoperation</strong>, where operators manipulate empty air and the model hallucinates the target objects and scene afterwards.
+            We demonstrate with real-world experiments that our generated data consistently improves downstream policy performance and significantly reduces real-world data requirements across diverse manipulation tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compositional Generation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Compositional Generation</h2>
+    <p class="has-text-centered" style="color: #999; margin-bottom: 1.5rem; font-size: 1.1rem;">
+      Interpret the same trajectory in multiple ways with different prior inputs.
+    </p>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-one-third">
+        <div class="feature-card has-text-centered">
+          <div class="icon-large">&#127912;</div>
+          <h4 class="title is-5">Novel Objects</h4>
+          <p class="is-size-6">Change the object prior to swap in unseen target objects while keeping the same motion.</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="feature-card has-text-centered">
+          <div class="icon-large">&#127758;</div>
+          <h4 class="title is-5">Novel Scenes</h4>
+          <p class="is-size-6">Replace the scene prior to place the robot in entirely new environments.</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="feature-card has-text-centered">
+          <div class="icon-large">&#128247;</div>
+          <h4 class="title is-5">Novel Views</h4>
+          <p class="is-size-6">Re-render robot motion from new camera angles with matching scene priors.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <video autoplay muted loop playsinline width="100%">
+        <source src="./static/videos/compositional_vis.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- Method Overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            RoboDream conditions video generation on three decoupled inputs:
+            (1) a <strong>rendered robot-only trajectory</strong> that anchors the embodiment;
+            (2) a <strong>scene prior</strong> (background image) that defines the environment; and
+            (3) an <strong>object prior</strong> (cropped object image) that specifies target objects.
+            The rendered motion and scene prior are concatenated with noisy latent frames in channel space, while object prior tokens are injected via extended self-attention.
+            Task instructions and global trajectory are injected via cross-attention to ensure semantic and kinematic consistency.
+          </p>
+        </div>
+        <div>
+          <video autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/method.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prior Extraction Pipeline -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-4">Automated Prior Extraction</h2>
+        <div class="content has-text-justified">
+          <p>
+            To train RoboDream, we construct training pairs from existing robot datasets without manual annotation.
+            Given an initial observation and task instruction, we use GPT-5-nano to identify task-relevant objects,
+            Grounded-SAM to segment them into an <strong>object prior</strong>, and OmniPaint to inpaint the background into a clean <strong>scene prior</strong>.
+          </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="./static/images/data_processing.jpg" alt="Prior Extraction Pipeline"
+               style="width: 75%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Deployment Modes -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Deployment Modes</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Retrieval and Rebirth</h3>
+        <div class="content has-text-justified">
+          <p>
+            Given a new task, we retrieve semantically similar trajectories from an existing dataset (e.g., DROID).
+            These are replayed in a simulator to render robot-only motion videos from novel camera viewpoints.
+            Combined with new scene and object priors, RoboDream synthesizes demonstrations <strong>reborn</strong> in entirely new contexts &mdash; no new motion data needed.
+          </p>
+        </div>
+        <video autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/retrieval_and_rebirth.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Prop-Free Teleoperation</h3>
+        <div class="content has-text-justified">
+          <p>
+            Operators control the robot to perform task motions with <strong>imaginary objects</strong> (pantomime).
+            This can happen on an empty workspace or in a simulator. The recorded trajectory is rendered, and RoboDream paints arbitrary objects and scenes.
+            <strong>One motion to multiple tasks</strong>: a single prop-free trajectory can be reused across different tasks by simply changing the object and scene priors.
+          </p>
+        </div>
+        <video autoplay muted loop playsinline width="100%">
+          <source src="./static/videos/prop_free_manipulation.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experimental Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+
+    <!-- Retrieval and Rebirth Results -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Retrieval and Rebirth for Policy Learning</h3>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate on four real-world manipulation tasks using a Franka Panda robot (DROID platform).
+            <strong>Gen-Mix</strong> (50 real + 100 generated demos) achieves <strong>62.5%</strong> average success rate, significantly outperforming Real-50 (36.3%) and Orig-Mix (45.0%).
+            Raw DROID data (Orig-100) completely fails (0%) due to domain shift, while RoboDream successfully bridges this gap.
+          </p>
+        </div>
+
+        <div class="has-text-centered">
+          <table class="results-table" style="max-width: 700px; margin: 0 auto;">
+            <thead>
+              <tr>
+                <th style="text-align: left;">Task</th>
+                <th>Real-50</th>
+                <th>Orig-100</th>
+                <th>Orig-Mix</th>
+                <th>Gen-100</th>
+                <th>Gen-Mix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left;">Put Cube into Cup</td>
+                <td>35</td>
+                <td>0</td>
+                <td>55</td>
+                <td>20</td>
+                <td class="best">65</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">Put Marker into Bowl</td>
+                <td>30</td>
+                <td>0</td>
+                <td>35</td>
+                <td>15</td>
+                <td class="best">55</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">Remove Marker from Bowl</td>
+                <td>20</td>
+                <td>0</td>
+                <td>20</td>
+                <td>5</td>
+                <td class="best">35</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">Wipe Table with Towel</td>
+                <td>60</td>
+                <td>0</td>
+                <td>70</td>
+                <td>20</td>
+                <td class="best">95</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><strong>Average</strong></td>
+                <td>36.3</td>
+                <td>0</td>
+                <td>45.0</td>
+                <td>15.0</td>
+                <td class="best">62.5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Prop-Free & Scaling side by side -->
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h3 class="title is-4">Prop-Free vs. Real Collection</h3>
+        <div class="content has-text-justified">
+          <p>
+            Prop-free teleoperation achieves competitive performance (32.5%) compared to real data collection (36.3%) while being ~2.2x faster.
+          </p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <h3 class="title is-4">Scaling with Generated Data</h3>
+        <div class="content has-text-justified">
+          <p>
+            Performance consistently improves as more generated data is added, saturating around Mix-200.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dual-table-wrapper">
+      <table class="results-table dual-table-left">
+        <thead>
+          <tr>
+            <th style="text-align: left;">Task</th>
+            <th>Real-50</th>
+            <th>Real w/ Gen</th>
+            <th>Prop-Free</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left;">Put Cube into Cup</td>
+            <td>35</td>
+            <td>25</td>
+            <td><strong>30</strong></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Put Marker into Bowl</td>
+            <td>30</td>
+            <td>20</td>
+            <td><strong>20</strong></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Remove Marker from Bowl</td>
+            <td>20</td>
+            <td>15</td>
+            <td><strong>20</strong></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Wipe Table with Towel</td>
+            <td>60</td>
+            <td>60</td>
+            <td><strong>60</strong></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><strong>Average</strong></td>
+            <td>36.3</td>
+            <td>30.0</td>
+            <td><strong>32.5</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="results-table dual-table-right">
+        <thead>
+          <tr>
+            <th>Real-50</th>
+            <th>Mix-100</th>
+            <th>Mix-200</th>
+            <th>Mix-300</th>
+            <th>Mix-400</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>35</td>
+            <td>65</td>
+            <td>75</td>
+            <td>80</td>
+            <td>75</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>55</td>
+            <td>70</td>
+            <td>70</td>
+            <td>70</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>35</td>
+            <td>45</td>
+            <td>50</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>60</td>
+            <td>95</td>
+            <td>100</td>
+            <td>95</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>36.3</td>
+            <td>62.5</td>
+            <td><strong>72.5</strong></td>
+            <td>73.75</td>
+            <td>73.75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- Real-World Rollouts -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Real-World Policy Rollouts</h2>
+      <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+        Policies trained with RoboDream-generated data (Gen-Mix) on four manipulation tasks.
+      </p>
+
+      <div class="rollout-grid">
+        <div class="rollout-item">
+          <video autoplay muted loop playsinline>
+            <source src="./static/videos/rollout_put_cube.mp4" type="video/mp4">
+          </video>
+          <p>Put Cube into Cup</p>
+        </div>
+        <div class="rollout-item">
+          <video autoplay muted loop playsinline>
+            <source src="./static/videos/rollout_put_marker.mp4" type="video/mp4">
+          </video>
+          <p>Put Marker into Bowl</p>
+        </div>
+        <div class="rollout-item">
+          <video autoplay muted loop playsinline>
+            <source src="./static/videos/rollout_remove_marker.mp4" type="video/mp4">
+          </video>
+          <p>Remove Marker from Bowl</p>
+        </div>
+        <div class="rollout-item">
+          <video autoplay muted loop playsinline>
+            <source src="./static/videos/rollout_wipe_table.mp4" type="video/mp4">
+          </video>
+          <p>Wipe Table with Towel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Takeaways -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Takeaways</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              <strong>Compositional Control:</strong> By conditioning on explicit scene and object priors, RoboDream enables controllable generation across arbitrary environments and objects without task-specific fine-tuning.
+            </li>
+            <li>
+              <strong>Zero-Shot Generalization:</strong> Trained on large-scale multi-environment data (DROID), RoboDream synthesizes valid interactions in scenarios unseen during training, with novel objects, scenes, and viewpoints.
+            </li>
+            <li>
+              <strong>Scalable Data Collection:</strong> Two deployment modes &mdash; retrieval and rebirth plus prop-free teleoperation &mdash; address key bottlenecks in real-world data collection, reducing cost while maintaining quality.
+            </li>
+            <li>
+              <strong>Stronger Policies:</strong> Generated data consistently improves downstream policy performance, achieving 62.5% average success from just 50 real demos augmented with RoboDream data.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ye2026robodream,
+  title={RoboDream: Controllable and Scalable Robot Data Synthesis via Embodiment-Aware World Models},
+  author={Ye, Junjie and Xue, Rong and Van Hoorick, Basile and Li, Runhao and Belagavi Rajaprakash, Harshitha and Tokmakov, Pavel and Irshad, Muhammad Zubair and Guizilini, Vitor and Wang, Yue},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+
+
+<script>
+  AOS.init({
+    offset: 100,
+    duration: 800,
+    easing: 'ease-out-back',
+    once: true,
+  });
+</script>
+</body>
+</html>
