@@ -8,11 +8,11 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-blue.svg)](http://junjieye.com/RoboDream/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-**[Junjie Ye](https://jay-ye.github.io/)<sup>1,2</sup>, [Rong Xue](https://rongxuezoe.github.io/)<sup>1</sup>, [Basile Van Hoorick](https://basile.be/)<sup>2</sup>, [Runhao Li](https://www.linkedin.com/in/runhao-li-lee021004/)<sup>1</sup>, [Harshitha Belagavi Rajaprakash](https://harshithabr.github.io/)<sup>1</sup>, [Pavel Tokmakov](https://pvtokmakov.github.io/home/)<sup>2</sup>, [Muhammad Zubair Irshad](https://zubairirshad.com/)<sup>2</sup>, [Vitor Guizilini](https://vitorguizilini.github.io/)<sup>2,&dagger;</sup>, [Yue Wang](https://yuewang.xyz/)<sup>1,&dagger;</sup>**
+**[Junjie Ye](https://jay-ye.github.io/)<sup>1,2</sup>, [Rong Xue](https://rongxuezoe.github.io/)<sup>1</sup>, [Basile Van Hoorick](https://basile.be/)<sup>2</sup>, [Runhao Li](https://www.linkedin.com/in/runhao-li-lee021004/)<sup>1</sup>, [Harshitha Rajaprakash](https://harshithabr.github.io/)<sup>1</sup>, [Pavel Tokmakov](https://pvtokmakov.github.io/home/)<sup>2</sup>, [Muhammad Zubair Irshad](https://zubairirshad.com/)<sup>2</sup>, [Vitor Guizilini](https://vitorguizilini.github.io/)<sup>2,&dagger;</sup>, [Yue Wang](https://yuewang.xyz/)<sup>1,&dagger;</sup>**
 
 <sup>1</sup>USC Physical Superintelligence (PSI) Lab &nbsp;&nbsp; <sup>2</sup>Toyota Research Institute &nbsp;&nbsp; <sup>&dagger;</sup>Equal advising
 
-<img src="assets/teaser.gif" alt="RoboDream teaser" width="100%">
+<img src="assets/teaser.gif" alt="RoboDream teaser" width="85%">
 
 </div>
 
@@ -31,7 +31,7 @@ If you find RoboDream useful in your research, please consider citing:
 ```bibtex
 @article{ye2026robodream,
   title={RoboDream: Compositional World Models for Scalable Robot Data Synthesis},
-  author={Ye, Junjie and Xue, Rong and Van Hoorick, Basile and Li, Runhao and Belagavi Rajaprakash, Harshitha and Tokmakov, Pavel and Irshad, Muhammad Zubair and Guizilini, Vitor and Wang, Yue},
+  author={Ye, Junjie and Xue, Rong and Van Hoorick, Basile and Li, Runhao and Rajaprakash, Harshitha and Tokmakov, Pavel and Irshad, Muhammad Zubair and Guizilini, Vitor and Wang, Yue},
   journal={arXiv preprint arXiv:2606.02577},
   year={2026}
 }
