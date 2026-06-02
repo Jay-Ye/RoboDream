@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/robodream_logo.svg" alt="RoboDream Logo" height="90">
+<img src="assets/robodream_logo.png" alt="RoboDream Logo" height="140">
 
 # RoboDream: Compositional World Models for Scalable Robot Data Synthesis
 
@@ -8,7 +8,7 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-blue.svg)](http://junjieye.com/RoboDream/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-**[Junjie Ye](https://junjieye.com)<sup>1,2</sup>, Rong Xue<sup>1</sup>, Basile Van Hoorick<sup>2</sup>, Runhao Li<sup>1</sup>, Harshitha Belagavi Rajaprakash<sup>1</sup>, Pavel Tokmakov<sup>2</sup>, Muhammad Zubair Irshad<sup>2</sup>, Vitor Guizilini<sup>2,&dagger;</sup>, Yue Wang<sup>1,&dagger;</sup>**
+**[Junjie Ye](https://jay-ye.github.io/)<sup>1,2</sup>, [Rong Xue](https://rongxuezoe.github.io/)<sup>1</sup>, [Basile Van Hoorick](https://basile.be/)<sup>2</sup>, [Runhao Li](https://www.linkedin.com/in/runhao-li-lee021004/)<sup>1</sup>, [Harshitha Belagavi Rajaprakash](https://harshithabr.github.io/)<sup>1</sup>, [Pavel Tokmakov](https://pvtokmakov.github.io/home/)<sup>2</sup>, [Muhammad Zubair Irshad](https://zubairirshad.com/)<sup>2</sup>, [Vitor Guizilini](https://vitorguizilini.github.io/)<sup>2,&dagger;</sup>, [Yue Wang](https://yuewang.xyz/)<sup>1,&dagger;</sup>**
 
 <sup>1</sup>USC Physical Superintelligence (PSI) Lab &nbsp;&nbsp; <sup>2</sup>Toyota Research Institute &nbsp;&nbsp; <sup>&dagger;</sup>Equal advising
 
@@ -18,18 +18,11 @@
 
 ## Abstract
 
-Scaling robot learning requires large-scale, diverse demonstrations, yet real-world data collection via teleoperation remains prohibitively expensive and time-consuming. While video diffusion models offer a promising avenue for data scaling, existing generative approaches are often limited to superficial visual augmentation, or suffer from embodiment hallucinations that yield physically infeasible motions.
-
-We present **RoboDream**, a generalizable embodiment-centric world model that achieves scalable data generation by synthesizing photorealistic demonstrations with novel objects, in novel scenes, and from novel viewpoints. Our approach anchors generation to rendered robot motion while conditioning on explicit scene and object priors, effectively decoupling trajectory execution from environment synthesis. This formulation unlocks two powerful data scaling capabilities:
-
-1. **Retrieval and rebirth** — repurposing existing trajectories into entirely new contexts without new motion data; and
-2. **Prop-free teleoperation** — where operators manipulate empty air and the model hallucinates the target objects and scene afterwards.
-
-We demonstrate with real-world experiments that our generated data consistently improves downstream policy performance and significantly reduces real-world data requirements across diverse manipulation tasks.
+RoboDream is a generalizable embodiment-centric world model for scalable robot data synthesis. It anchors generation to rendered robot motion while conditioning on explicit scene and object priors, decoupling trajectory execution from environment synthesis to produce photorealistic demonstrations with novel objects, scenes, and viewpoints. This enables *retrieval and rebirth* (repurposing existing trajectories into new contexts) and *prop-free teleoperation* (operators manipulate empty air while the model hallucinates objects and scene). Real-world experiments show the generated data consistently improves downstream policy performance and substantially reduces real-world data requirements.
 
 ## Code Release
 
-🚧 **Code coming soon.** We are cleaning up the codebase and will release training, data generation, and policy-learning pipelines here. Please ⭐ watch this repository for updates.
+🚧 **Code coming soon.** We are cleaning up the codebase and will release training, data generation, and policy-learning pipelines here.
 
 ## Citation
 
