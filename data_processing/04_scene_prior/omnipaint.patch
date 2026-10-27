@@ -1,0 +1,59 @@
+diff --git a/scripts/setup.sh b/scripts/setup.sh
+index 298b93f..7774272 100644
+--- a/scripts/setup.sh
++++ b/scripts/setup.sh
+@@ -2,6 +2,15 @@
+ 
+ set -euo pipefail
+ 
++CONSTRAINT_FILE="/etc/pip/constraint.txt"
++
++if [[ -f "${CONSTRAINT_FILE}" ]]; then
++  sed -i 's/^h11==0\.16\.0$/h11<0.15,>=0.13/' "${CONSTRAINT_FILE}"
++  echo "Updated h11 constraint in ${CONSTRAINT_FILE}"
++else
++  echo "WARNING: ${CONSTRAINT_FILE} not found, skipping constraint update"
++fi
++
+ pip install transformers==4.41.0
+ pip install peft==0.10.0
+ pip install gradio==5.23.0
+diff --git a/src/generate.py b/src/generate.py
+index 402261f..dd69f55 100644
+--- a/src/generate.py
++++ b/src/generate.py
+@@ -179,7 +179,7 @@ def generate(
+         assert len(conditions) <= 2, "Only one or two condition is supported for now."
+         if not default_lora:
+             pipeline.set_adapters(conditions[0].condition_type)
+-        print(f"Active adapter now: {pipeline.get_active_adapters()}")
++        # print(f"Active adapter now: {pipeline.get_active_adapters()}")
+         for condition in conditions:
+             tokens, ids, type_id = condition.encode(self)
+             condition_latents.append(tokens)  # [batch_size, token_n, token_dim]
+@@ -213,7 +213,14 @@ def generate(
+     self._num_timesteps = len(timesteps)
+ 
+     # 6. Denoising loop
+-    with self.progress_bar(total=num_inference_steps) as progress_bar:
++    show_progress_bar = os.environ.get("DEBUG", "false").lower() == "true"
++    if show_progress_bar:
++        progress_bar = self.progress_bar(total=num_inference_steps)
++    else:
++        from contextlib import nullcontext
++        progress_bar = nullcontext()  # acts as a no-op context manager
++
++    with progress_bar as progress:
+         for i, t in enumerate(timesteps):
+             if self.interrupt:
+                 continue
+@@ -268,7 +275,8 @@ def generate(
+             if i == len(timesteps) - 1 or (
+                 (i + 1) > num_warmup_steps and (i + 1) % self.scheduler.order == 0
+             ):
+-                progress_bar.update()
++                if show_progress_bar:
++                    progress.update()
+ 
+     if output_type == "latent":
+         image = latents

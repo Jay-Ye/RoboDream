@@ -1,0 +1,16 @@
+# Model, training, inference server
+einops
+flask==3.1.1
+imageio[pyav,ffmpeg]==2.37.0
+transformers==4.51.3
+sentencepiece==0.2.0
+huggingface-hub==0.32.4
+wandb==0.16.6
+# Data processing / generation clients
+boto3==1.38.31
+decord==0.6.0
+h5py
+mediapy==1.2.4
+opencv-python-headless==4.11.0.86
+requests
+tqdm

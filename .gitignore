@@ -1,0 +1,43 @@
+# Secrets / local config
+.env
+*.pem
+
+# Large artifacts (hosted on Hugging Face)
+/checkpoints/
+/datasets/
+/outputs/
+/droid/
+/checkpoints_rd/
+/output/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.tar
+*.pkl.gz
+*.mp4
+*.gif
+!demos/**/*.mp4
+!demos/t5_prompts.pkl.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.uv/
+.ipynb_checkpoints/
+filenames_*.txt
+wandb/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+.claude/
+
+# Fetched at setup time
+replay/assets/
+replay/.venv/
+generation/priors/OmniPaint/
+data_processing/04_scene_prior/OmniPaint/

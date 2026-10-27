@@ -1,0 +1,39 @@
+[project]
+name = "sim-evals"
+version = "0.1.0"
+description = "IsaacLab replay of DROID trajectories to render robot-only (anchor) videos for RoboDream"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pip>=25.0",
+  "mediapy>=1.2.4",
+  "openpi-client",
+  "isaaclab[all,isaacsim]==2.2.0",
+  "tyro>=0.9.17",
+  "plotly>=5.3.1",  # Allow flexible plotly version instead of locked
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu118", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = {index = "pytorch-cu118", marker = "sys_platform == 'linux' or sys_platform == 'win32'"}
+isaacsim = { index = "isaac" }
+real2simeval = { workspace = true }
+openpi-client = { git = "https://github.com/Physical-Intelligence/openpi.git", subdirectory = "packages/openpi-client" }
+
+[tool.uv.extra-build-dependencies]
+flatdict = ["setuptools==68.2.2"]
+openpi-client = ["hatchling"]
+isaacsim-core = ["wheel_stub"]
+
+[[tool.uv.index]]
+name = "isaac"
+url = "https://pypi.nvidia.com"
+explicit = true
+
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true

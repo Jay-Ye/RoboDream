@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ObjectRemoval"
+version = "0.1.0"
+description = "OmniPaint-based object removal: input (image, mask) -> edited image."
+readme = "README_ObjectRemoval.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "RoboDream authors"}]
+
+dependencies = [
+  # Keep these in sync with `scripts/setup.sh`
+  "transformers==4.41.0",
+  "peft==0.10.0",
+  "gradio==5.23.0",
+  "diffusers==0.31.0",
+  "torchvision",
+  "huggingface-hub>=0.23.0,<1.0",
+  "torchmetrics==0.6.0",
+  "gradio_image_annotation",
+  "opencv-python==4.8.0.74",
+  "numpy==1.26.4",
+  "sentencepiece",
+
+  # Used by the `ObjectRemoval` wrapper itself
+  "pillow",
+  "pyyaml",
+  "torch",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ObjectRemoval*", "src*"]
+

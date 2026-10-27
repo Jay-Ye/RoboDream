@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "GSamObjectPrior"
+version = "0.1.0"
+description = "Grounded-SAM object prior utilities (mask, merged mask, and scene-prior collage)."
+readme = "README_GSamObjectPrior.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "RoboDream authors"}]
+
+# Keep dependencies minimal; your main environment already pins versions.
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "pillow",
+  "torch",
+  "transformers",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["GSamObjectPrior*"]
+

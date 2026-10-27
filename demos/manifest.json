@@ -1,0 +1,125 @@
+{
+  "renders": {
+    "retrieval/put_the_marker_in_the_bowl": {
+      "source": "DROID episode IRIS+7dfa2da3+2023-04-26-09h-58m-06s",
+      "num_frames": 210
+    },
+    "retrieval/put_the_yellow_block_in_the_cup": {
+      "source": "DROID episode AUTOLab+84bd5053+2023-08-17-17h-06m-11s",
+      "num_frames": 109
+    },
+    "retrieval/remove_the_marker_from_the_bowl_and_put_it_on_the_table": {
+      "source": "DROID episode IRIS+7dfa2da3+2023-05-05-10h-59m-05s",
+      "num_frames": 155
+    },
+    "retrieval/wipe_the_table_with_the_towel": {
+      "source": "DROID episode IPRL+2fe9715d+2023-08-21-18h-19m-11s",
+      "num_frames": 267
+    },
+    "prop_free/default": {
+      "source": "prop-free teleoperation episode (lab camera)",
+      "num_frames": 152
+    },
+    "prop_free/novel_view": {
+      "source": "prop-free teleoperation episode (novel camera)",
+      "num_frames": 152
+    }
+  },
+  "cases": {
+    "retrieval_put_the_marker_in_the_bowl": {
+      "mode": "retrieval_rebirth",
+      "render": "retrieval/put_the_marker_in_the_bowl",
+      "prompt": "Put the marker in the bowl",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_put_the_marker_in_the_bowl.png"
+    },
+    "retrieval_put_the_yellow_block_in_the_cup": {
+      "mode": "retrieval_rebirth",
+      "render": "retrieval/put_the_yellow_block_in_the_cup",
+      "prompt": "Put the yellow block in the cup",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_put_the_yellow_block_in_the_cup.png"
+    },
+    "retrieval_remove_the_marker_from_the_bowl_and_put_it_on_the_table": {
+      "mode": "retrieval_rebirth",
+      "render": "retrieval/remove_the_marker_from_the_bowl_and_put_it_on_the_table",
+      "prompt": "Remove the marker from the bowl and put it on the table",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_put_the_marker_in_the_bowl.png"
+    },
+    "retrieval_wipe_the_table_with_the_towel": {
+      "mode": "retrieval_rebirth",
+      "render": "retrieval/wipe_the_table_with_the_towel",
+      "prompt": "Wipe the table with the towel",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_wipe_the_table_with_the_towel.png"
+    },
+    "propfree_marker_bowl": {
+      "mode": "prop_free",
+      "render": "prop_free/default",
+      "prompt": "Put the marker in the bowl",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_put_the_marker_in_the_bowl.png",
+      "label": "Generated demo"
+    },
+    "propfree_novel_instance": {
+      "mode": "prop_free",
+      "render": "prop_free/default",
+      "prompt": "Put the marker in the bowl",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_red_marker_blue_bowl.png",
+      "label": "Novel instance"
+    },
+    "propfree_novel_scene": {
+      "mode": "prop_free",
+      "render": "prop_free/default",
+      "prompt": "Put the marker in the bowl",
+      "scene_prior": "priors/novel_scene.png",
+      "object_prior": "priors/objects_put_the_marker_in_the_bowl.png",
+      "label": "Novel scene"
+    },
+    "propfree_novel_task": {
+      "mode": "prop_free",
+      "render": "prop_free/default",
+      "prompt": "Put the yellow block in the cup",
+      "scene_prior": "priors/lab_scene.png",
+      "object_prior": "priors/objects_cube_cup.png",
+      "label": "Novel task"
+    },
+    "propfree_novel_view": {
+      "mode": "prop_free",
+      "render": "prop_free/novel_view",
+      "prompt": "Put the marker in the bowl",
+      "scene_prior": "priors/novel_view_scene.png",
+      "object_prior": "priors/objects_put_the_marker_in_the_bowl.png",
+      "label": "Novel view"
+    }
+  },
+  "references": {
+    "retrieved_put_the_marker_in_the_bowl": {
+      "path": "references/retrieved_put_the_marker_in_the_bowl.mp4",
+      "layout": "wrist (top) / external (bottom)",
+      "source": "DROID episode IRIS+7dfa2da3+2023-04-26-09h-58m-06s"
+    },
+    "retrieved_put_the_yellow_block_in_the_cup": {
+      "path": "references/retrieved_put_the_yellow_block_in_the_cup.mp4",
+      "layout": "wrist (top) / external (bottom)",
+      "source": "DROID episode AUTOLab+84bd5053+2023-08-17-17h-06m-11s"
+    },
+    "retrieved_remove_the_marker_from_the_bowl_and_put_it_on_the_table": {
+      "path": "references/retrieved_remove_the_marker_from_the_bowl_and_put_it_on_the_table.mp4",
+      "layout": "wrist (top) / external (bottom)",
+      "source": "DROID episode IRIS+7dfa2da3+2023-05-05-10h-59m-05s"
+    },
+    "retrieved_wipe_the_table_with_the_towel": {
+      "path": "references/retrieved_wipe_the_table_with_the_towel.mp4",
+      "layout": "wrist (top) / external (bottom)",
+      "source": "DROID episode IPRL+2fe9715d+2023-08-21-18h-19m-11s"
+    },
+    "propfree_teleop": {
+      "path": "references/propfree_teleop.mp4",
+      "layout": "wrist (top) / external (bottom)",
+      "source": "prop-free teleoperation recording (no objects)"
+    }
+  }
+}
